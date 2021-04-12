@@ -3,6 +3,10 @@
     --secondary: rgb(1, 180, 228);
     --tertiary: rgb(144, 206, 161)
 }
+/* background for nav */
+.nav-wrapper {
+    background-color: var(--primary);
+}
 
 /* LOGO for TMDB */
 .tmdb {
@@ -10,4 +14,9 @@
     height: 10px;
     width: 100px;
     margin-top: 10px;
+}
+
+/* Font style for icons */
+i {
+    font-style:normal;
 }
