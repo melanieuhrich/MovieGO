@@ -5,8 +5,38 @@
 
 .container {
     width: 100%;
+
+    margin-left: 10px!important;
+
+
 }
 
+.container2 {
+    width: 100%;
+    margin-left: 0px!important;
+}
+
+.preferences-card, .blue-grey {
+    background-color: var(--primary)!important;
+}
+
+#family-card {
+    width: 100%;
+    height: 144px;
+    background-color: var(--primary);
+}
+
+#toggle {
+    padding-left: 50px;
+}
+
+#tgltext {
+    color: white;
+}
+
+.lever {
+    background-color: white;
+}
 
 #aboutbox {
     border-radius: 10px;
