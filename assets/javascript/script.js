@@ -13,6 +13,20 @@ noUiSlider.create(slider, {
     }
 });
 
+// var slider = document.getElementById('runTime-slider');
+//   noUiSlider.create(slider, {
+//    start: [1960, 2021],
+//    connect: true,
+//    step: 1,
+//    orientation: 'horizontal', // 'horizontal' or 'vertical'
+//    range: {
+//      'min': 1960,
+//      'max': 2021
+//    },
+//    format: wNumb({
+//      decimals: 0
+//    })
+//   });
        
 
 var tmdb = "https://api.themoviedb.org/3/movie/550?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2"
