@@ -86,4 +86,7 @@ i {
     font-style:normal;
 }
 
-
+.slider{
+    background-color: var(--secondary);
+    width: 300px;
+}
