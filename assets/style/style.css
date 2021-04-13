@@ -5,7 +5,10 @@
 
 .container {
     width: 100%;
+
     margin-left: 10px!important;
+
+
 }
 
 .container2 {
@@ -39,6 +42,11 @@
     border-radius: 10px;
     height: 80vh;
     width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px;
 }
 
 #bios {
@@ -47,6 +55,8 @@
     align-content: space-around;
     justify-content: center;
     width: 75%;
+    margin: 0px 10px;
+    padding: 0px 10px;
 }
 
 #bios img {
