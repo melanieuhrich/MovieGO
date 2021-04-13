@@ -1,0 +1,17 @@
+#aboutbox {
+    border-radius: 10px;
+    height: 80vh;
+    width: 80vw;
+}
+
+#bios {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: center;
+    width: 75%;
+}
+
+#bios img {
+    border-radius: 10px;
+}
