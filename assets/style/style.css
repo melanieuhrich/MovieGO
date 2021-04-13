@@ -1,3 +1,4 @@
+
 #aboutbox {
     border-radius: 10px;
     height: 80vh;
@@ -15,3 +16,27 @@
 #bios img {
     border-radius: 10px;
 }
+
+:root {
+    --primary: rgb(13, 37, 63);
+    --secondary: rgb(1, 180, 228);
+    --tertiary: rgb(144, 206, 161)
+}
+/* background for nav */
+.nav-wrapper {
+    background-color: var(--primary);
+}
+
+/* LOGO for TMDB */
+.tmdb {
+    background: url(https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.svg) no-repeat;
+    height: 10px;
+    width: 100px;
+    margin-top: 10px;
+}
+
+/* Font style for icons */
+i {
+    font-style:normal;
+}
+
