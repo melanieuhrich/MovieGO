@@ -1,3 +1,22 @@
+
+#aboutbox {
+    border-radius: 10px;
+    height: 80vh;
+    width: 80vw;
+}
+
+#bios {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: center;
+    width: 75%;
+}
+
+#bios img {
+    border-radius: 10px;
+}
+
 :root {
     --primary: rgb(13, 37, 63);
     --secondary: rgb(1, 180, 228);
@@ -20,3 +39,4 @@
 i {
     font-style:normal;
 }
+
