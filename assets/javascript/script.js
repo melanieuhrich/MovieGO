@@ -4,7 +4,17 @@ var requestUrl = 'https://api.themoviedb.org/3/movie/550?api_key=8426e25c492b7e1
 
 // Runtime Slider
 var slider = document.getElementById('runTime-slider');
+var slider1 = document.getElementById('runTime-slider2');
 noUiSlider.create(slider, {
+    start: [45, 300],
+    connect: true,
+    range: {
+        'min': 0,
+        'max': 400
+    }
+});
+
+noUiSlider.create(slider1, {
     start: [45, 300],
     connect: true,
     range: {
