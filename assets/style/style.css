@@ -23,6 +23,10 @@
     background-color: var(--primary);
 }
 
+.genreItem {
+    margin-bottom: 20px;
+}
+
 #toggle {
     padding-left: 50px;
 }
