@@ -4,7 +4,7 @@ var requestUrl = 'https://api.themoviedb.org/3/movie/550?api_key=8426e25c492b7e1
 
 // Runtime Slider
 var slider = document.getElementById('runTime-slider');
-var slider1 = document.getElementById('runTime-slider2');
+var slider1 = document.getElementById('year-slider2');
 noUiSlider.create(slider, {
     start: [45, 300],
     connect: true,
@@ -22,21 +22,16 @@ noUiSlider.create(slider1, {
         'max': 400
     }
 });
-
-// var slider = document.getElementById('runTime-slider');
-//   noUiSlider.create(slider, {
-//    start: [1960, 2021],
-//    connect: true,
-//    step: 1,
-//    orientation: 'horizontal', // 'horizontal' or 'vertical'
-//    range: {
-//      'min': 1960,
-//      'max': 2021
-//    },
-//    format: wNumb({
-//      decimals: 0
-//    })
-//   });
+//slider 2 - 
+var slider = document.getElementById('runTime-slider');
+  noUiSlider.create(slider, {
+   start: [1960, 2021],
+   connect: true,
+   range: {
+     'min': 1960,
+     'max': 2021
+   },
+  });
        
 
 var tmdb = "https://api.themoviedb.org/3/movie/550?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2"
