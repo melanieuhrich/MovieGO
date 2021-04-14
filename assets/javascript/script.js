@@ -2,6 +2,12 @@
 var key = '8426e25c492b7e1c228e5403fd1be062';
 var requestUrl = 'https://api.themoviedb.org/3/movie/550?api_key=8426e25c492b7e1c228e5403fd1be062'
 
+var tmdb = "https://api.themoviedb.org/3/movie/550?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2"
+var genre = "https://api.themoviedb.org/3/genre/movie/list?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US"
+var movie = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US"
+var search = "https://api.themoviedb.org/3/search/movie?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&query=Home+Alone"
+var key = "cdeeab3b93b63acfe6a1d14f6ac420d2"
+
 // Runtime Slider
 var slider = document.getElementById('runTime-slider');
 var runTimeSliderValueElement = document.getElementById('runTime-slider-value');
@@ -14,13 +20,9 @@ noUiSlider.create(slider, {
         'max': 400,
     }
 });
-
 slider.noUiSlider.on('update', function (values) {
     runTimeSliderValueElement.innerHTML = values.join(' - ');
 });
-
-
-
 //Year Slider 2 
 var slider = document.getElementById('year-slider2');
 var yearSlider2ValueElement = document.getElementById('year-slider2-value');
@@ -35,15 +37,6 @@ noUiSlider.create(slider, {
 slider.noUiSlider.on('update', function (values){
     yearSlider2ValueElement.innerHTML = values.join(' - ');
 })
-       
-
-var tmdb = "https://api.themoviedb.org/3/movie/550?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2"
-var genre = "https://api.themoviedb.org/3/genre/movie/list?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US"
-var movie = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US"
-var search = "https://api.themoviedb.org/3/search/movie?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&query=Home+Alone"
-var key = "cdeeab3b93b63acfe6a1d14f6ac420d2"
-
-
 
 
 fetch(search)
