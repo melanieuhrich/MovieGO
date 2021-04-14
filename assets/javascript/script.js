@@ -1,7 +1,6 @@
 
 var key = '8426e25c492b7e1c228e5403fd1be062';
 var requestUrl = 'https://api.themoviedb.org/3/movie/550?api_key=8426e25c492b7e1c228e5403fd1be062'
-
 var tmdb = "https://api.themoviedb.org/3/movie/550?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2"
 var genre = "https://api.themoviedb.org/3/genre/movie/list?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US"
 var movie = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US"
@@ -10,44 +9,22 @@ var key = "cdeeab3b93b63acfe6a1d14f6ac420d2"
 
 // Runtime Slider
 var slider = document.getElementById('runTime-slider');
-
-=======
 var runTimeSliderValueElement = document.getElementById('runTime-slider-value');
-
-
 noUiSlider.create(slider, {
     start: [45, 300],
     connect: true,
     range: {
         'min': 0,
         'max': 400,
-    }
+    },
+    format: wNumb({
+        decimals: 0,
+    }),
 });
-
-
-//slider 2 - 
-var slider = document.getElementById('year-slider2');
-  noUiSlider.create(slider, {
-   start: [1960, 2021],
-   connect: true,
-   range: {
-     'min': 1960,
-     'max': 2021
-   },
-  });
-       
-
-var tmdb = "https://api.themoviedb.org/3/movie/550?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2"
-var genre = "https://api.themoviedb.org/3/genre/movie/list?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US"
-var movie = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US"
-var search = "https://api.themoviedb.org/3/search/movie?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&query=Home+Alone"
-var key = "cdeeab3b93b63acfe6a1d14f6ac420d2"
-
-
-=======
-slider.noUiSlider.on('update', function (values) {
+slider.noUiSlider.on('update', function(values){
     runTimeSliderValueElement.innerHTML = values.join(' - ');
-});
+})
+
 //Year Slider 2 
 var slider = document.getElementById('year-slider2');
 var yearSlider2ValueElement = document.getElementById('year-slider2-value');
@@ -57,7 +34,10 @@ noUiSlider.create(slider, {
     range: {
         'min': 1960,
         'max': 2021,
-    }
+    },
+    format: wNumb({
+        decimals: 0,
+    }),
 });
 slider.noUiSlider.on('update', function (values){
     yearSlider2ValueElement.innerHTML = values.join(' - ');
