@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-      <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-      <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <!-- Link to noUIslider -->
-      <link href="./noUiSlider-14.7.0/" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style/style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Link to noUIslider -->
+  <link href="./noUiSlider-14.7.0/distribute/nouislider.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style/style.css">
 </head>
+
 <body>
-<!-- start of nav bar -->
+  <!-- start of nav bar -->
   <nav>
     <div class="nav-wrapper">
-      <a href="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.svg" class="brand-logo"><i class="material-icons tmdb"></i>Movie Generator</a>
+      <a href="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.svg"
+        class="brand-logo"><i class="material-icons tmdb"></i>Movie Generator</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#about"><i class="material-icons">About</i></a></li>
         <li><a href="#works"><i class="material-icons">How It Works</i></a></li>
@@ -28,25 +31,32 @@
   </nav>
   <!-- end of nav -->
 
-<!-- project pitch card starts here -->
-<div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Select your preferences!</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action row container">
-            <p>Select one or more...</p>
-            <form action="#">
-                <p class="col s3">
-                  <label>
-                    <input type="checkbox" id="28"/>
-                    <span class="card-text">Action</span>
-                  </label>
-                </p>
-                <p class="col s3">
+  <!-- project pitch card starts here -->
+  <!-- 2 panel by paul -->
+  <div class="container">
+    <div class="row">
+      <!-- left panel -->
+      <div class="col s12 m6 l6">
+        <!-- form styling -->
+        <div class="form deep-purple">
+          <!-- individual section of form -->
+          <div class="form-group">
+            <div class="card blue-grey darken-1 preferences-card">
+              <div class="card-content white-text preferences-card">
+                <span class="card-title">Select your preferences!</span>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action row preferences-card container2">
+                <p>Select one or more...</p>
+                <!-- <form action="#"> -->
+                  <p class="col s3">
+                    <label>
+                      <input type="checkbox" id="28" />
+                      <span class="card-text">Action</span>
+                    </label>
+                  </p>
+                  <p class="col s3">
                     <label>
                       <input type="checkbox" id="12" />
                       <span class="card-text">Adventure</span>
@@ -60,37 +70,37 @@
                   </p>
                   <p class="col s3">
                     <label>
-                      <input type="checkbox" id="35"/>
+                      <input type="checkbox" id="35" />
                       <span class="card-text">Comedy</span>
                     </label>
                   </p>
                   <p class="col s3">
                     <label>
-                      <input type="checkbox" id="80"/>
+                      <input type="checkbox" id="80" />
                       <span class="card-text">Crime</span>
                     </label>
                   </p>
                   <p class="col s3">
                     <label>
-                      <input type="checkbox" id="99"/>
+                      <input type="checkbox" id="99" />
                       <span class="card-text">Documentary</span>
                     </label>
                   </p>
                   <p class="col s3">
                     <label>
-                      <input type="checkbox" id="18"/>
+                      <input type="checkbox" id="18" />
                       <span class="card-text">Drama</span>
                     </label>
                   </p>
                   <p class="col s3">
                     <label>
-                      <input type="checkbox" id="10751"/>
+                      <input type="checkbox" id="10751" />
                       <span class="card-text">Family</span>
                     </label>
                   </p>
                   <p class="col s3">
                     <label>
-                      <input type="checkbox" id="14"/>
+                      <input type="checkbox" id="14" />
                       <span class="card-text">Fantasy</span>
                     </label>
                   </p>
@@ -108,7 +118,7 @@
                   </p>
                   <p class="col s3">
                     <label>
-                      <input type="checkbox" id="10402"/>
+                      <input type="checkbox" id="10402" />
                       <span class="card-text">Music</span>
                     </label>
                   </p>
@@ -120,19 +130,19 @@
                   </p>
                   <p class="col s3">
                     <label>
-                      <input type="checkbox" id="10749"/>
+                      <input type="checkbox" id="10749" />
                       <span class="card-text">Romance</span>
                     </label>
                   </p>
                   <p class="col s3">
                     <label>
-                      <input type="checkbox" id="878"/>
+                      <input type="checkbox" id="878" />
                       <span class="card-text">Science Fiction</span>
                     </label>
                   </p>
                   <p class="col s3">
                     <label>
-                      <input type="checkbox" id="10770"/>
+                      <input type="checkbox" id="10770" />
                       <span class="card-text">TV Movie</span>
                     </label>
                   </p>
@@ -150,38 +160,81 @@
                   </p>
                   <p class="col s3">
                     <label>
-                      <input type="checkbox" id="37"/>
+                      <input type="checkbox" id="37" />
                       <span class="card-text">Western</span>
                     </label>
                   </p>
-                </form>
+                  <div class="divider">
+                  </div>
+                  <!-- Runtime Slider -->
+                  <div class="row">
+                    <!-- spanner 1 -->
+                    <div class="col s12 m6 l6">
+                      <div class="slider">
+                        <h2 class="runTime">
+                          Runtime:
+                        </h2>
+                        <div id="runTime-slider"></div>
+                      </div>
+                    </div>
+                    <!-- Year Slider -->
+                    <!-- spanner 2 -->
+                    <div class="col s12 m6 l6">
+                      <div class="slider">
+                        <h2 class="runTime">
+                          Year:
+                        </h2>
+                        <div id="year-slider2"></div>
+                      </div>
+                    </div>
+                  </div>
+                <!-- </form> -->
+              </div>
+            </div>
+
+          </div>
+          <!-- individual section of form -->
+          <div class="form-group">
+            <!-- family-friendly switch starts -->
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="card darken-1" id="family-card">
+                  <div class="card-content white-text">
+                    <span class="card-title">Family-friendly?</span>
+                  </div>
+                  <div class="switch" id="toggle">
+                    <label id="tgltext">
+                      Off
+                      <input type="checkbox">
+                      <span class="lever"></span>
+                      On
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- family-friendly switch ends -->
+
+
         </div>
       </div>
     </div>
   </div>
-
-
-<div class="container">
-
-<div class="container">
-    <h1>Hello</h1>
-</div>
-
-
-</div>
-
-
-
-<p>hello</p>
-
-  <div class="col s12 m7">
-    <h2 class="header">Runtime:</h2>
-      <div id="runTime-slider"></div>
+  <!-- right panel -->
+  <div class="col s12 m6 l6"></div>
+  </div>
   </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- noUIslider js -->
-<script src="nouislider.js"></script>
-<script src="assets/javascript/script.js"></script>
+
+
+
+  <!-- jQuery js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- noUIslider js -->
+  <script src="./noUiSlider-14.7.0/distribute/nouislider.min.js"></script>
+  <!-- custom js -->
+  <script src="assets/javascript/script.js"></script>
 </body>
+
 </html>
