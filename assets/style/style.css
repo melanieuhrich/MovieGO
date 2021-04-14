@@ -112,11 +112,6 @@ i {
     margin: 10px;
 }
 
-#submit-btn {
-    width: 100%; 
-    /* display: flex!important; */
-    /* flex-direction: row!important; */
-    /* align-content: center!important; */
-    margin-left: 300px;
-    margin-bottom: 500px;
+#right-panel {
+    background-color: var(--primary);
 }

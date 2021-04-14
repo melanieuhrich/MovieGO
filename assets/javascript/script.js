@@ -10,7 +10,10 @@ var key = "cdeeab3b93b63acfe6a1d14f6ac420d2"
 
 // Runtime Slider
 var slider = document.getElementById('runTime-slider');
+
+=======
 var runTimeSliderValueElement = document.getElementById('runTime-slider-value');
+
 
 noUiSlider.create(slider, {
     start: [45, 300],
@@ -20,6 +23,28 @@ noUiSlider.create(slider, {
         'max': 400,
     }
 });
+
+
+//slider 2 - 
+var slider = document.getElementById('year-slider2');
+  noUiSlider.create(slider, {
+   start: [1960, 2021],
+   connect: true,
+   range: {
+     'min': 1960,
+     'max': 2021
+   },
+  });
+       
+
+var tmdb = "https://api.themoviedb.org/3/movie/550?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2"
+var genre = "https://api.themoviedb.org/3/genre/movie/list?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US"
+var movie = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US"
+var search = "https://api.themoviedb.org/3/search/movie?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&query=Home+Alone"
+var key = "cdeeab3b93b63acfe6a1d14f6ac420d2"
+
+
+=======
 slider.noUiSlider.on('update', function (values) {
     runTimeSliderValueElement.innerHTML = values.join(' - ');
 });
@@ -83,5 +108,31 @@ fetch(getlink)
     .then (function (data) {
         console.log(data);
     })
+
+var submitBtn = document.getElementById('submit-btn');
+
+function suggestMovie() { 
+    console.log('working');
+    var right = document.getElementById('right-panel')
+    var recBox = document.createElement('div');
+    var movieBox = document.createElement('div');
+    var trailerBox = document.createElement('div');
+    var basedOn = document.createElement('h3');
+    var title = document.createElement('p');
+    var genre = document.createElement('p');
+    var year = document.createElement('p');
+    var runTime = document.createElement('p');
+    var familyFriendly = document.createElement('p');
+    var rating = document.createElement('p');
+    basedOn.textContent = 'Based on your preferences, we suggest:';
+    console.log('movie');
+    right.appendChild(recBox);
+    recBox.appendChild(movieBox);
+    recBox.appendChild(trailerBox);
+    movieBox.appendChild(basedOn);
+
+}  
+
+submitBtn.addEventListener('click', suggestMovie)
 
     
