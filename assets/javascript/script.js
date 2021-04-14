@@ -18,11 +18,15 @@ noUiSlider.create(slider, {
     range: {
         'min': 0,
         'max': 400,
-    }
+    },
+    format: wNumb({
+        decimals: 0,
+    }),
 });
 slider.noUiSlider.on('update', function (values) {
     runTimeSliderValueElement.innerHTML = values.join(' - ');
 });
+
 //Year Slider 2 
 var slider = document.getElementById('year-slider2');
 var yearSlider2ValueElement = document.getElementById('year-slider2-value');
@@ -32,7 +36,10 @@ noUiSlider.create(slider, {
     range: {
         'min': 1960,
         'max': 2021,
-    }
+    },
+    format: wNumb({
+        decimals: 0,
+    }),
 });
 slider.noUiSlider.on('update', function (values){
     yearSlider2ValueElement.innerHTML = values.join(' - ');
