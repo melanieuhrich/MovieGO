@@ -23,6 +23,12 @@
     background-color: var(--primary);
 }
 
+#purplebox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .genreItem {
     margin-bottom: 20px;
 }
