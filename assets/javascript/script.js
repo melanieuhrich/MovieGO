@@ -87,7 +87,8 @@ fetch(getlink)
     })
     .then (function (data) {
         console.log(data);
-    })
+    });
+
 
 var submitBtn = document.getElementById('submit-btn');
 
@@ -116,3 +117,28 @@ function suggestMovie() {
 submitBtn.addEventListener('click', suggestMovie)
 
     
+
+// checkbox boolean + genre id    
+($(".checkboxinput").eq(0).attr("id"));
+($(".checkboxinput").eq(0).is(":checked"));
+
+
+//test button
+
+$(".btn").on("click", function () {
+    var list = getGenres();
+    console.log(list);
+}
+);
+
+function getGenres(){
+    genreList = [];
+    for (i = 0; i < $("#checkBoxForm").children().length - 1; i++)
+    if ($(".checkboxinput").eq(i).is(":checked")) {
+        genreList.push($(".checkboxinput").eq(i).attr("id"));
+    // console.log(genreList);
+    // console.log(genreList.toString());
+    }
+    return genreList.toString();
+}
+
