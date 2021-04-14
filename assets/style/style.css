@@ -100,9 +100,16 @@
 i {
     font-style:normal;
 }
+.runTime{
+    font-size: 28px;
+}
 
 .slider{
-    background-color: var(--secondary);
+    width: 100%;
+}
+
+.slideVal{
+    margin: 10px;
 }
 
 #right-panel {
