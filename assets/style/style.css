@@ -86,3 +86,12 @@ i {
 .slider{
     background-color: var(--secondary);
 }
+
+#submit-btn {
+    width: 100%; 
+    /* display: flex!important; */
+    /* flex-direction: row!important; */
+    /* align-content: center!important; */
+    margin-left: 300px;
+    margin-bottom: 500px;
+}
