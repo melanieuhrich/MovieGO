@@ -1,54 +1,28 @@
 
+:root {
+    --primary: rgb(13, 37, 63);
+    --secondary: rgb(1, 180, 228);
+    --tertiary: rgb(144, 206, 161)
+}
+
 * {
     color: white;
 }
 
 .container {
     width: 100%;
-    margin-left: 10px!important;
-}
-
-.container2 {
-    width: 100%;
-    margin-left: 0px!important;
-}
-
-.preferences-card, .blue-grey {
-    background-color: var(--primary)!important;
-}
-
-#family-card {
-    width: 100%;
-    height: 144px;
-    background-color: var(--primary);
-}
-
-.genreItem {
-    margin-bottom: 20px;
-}
-
-#toggle {
-    padding-left: 50px;
-}
-
-#tgltext {
-    color: white;
-}
-
-.lever {
-    background-color: white;
 }
 
 #mainArea {
     height: 100vh;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    width: 100vw;
 }
 
 #aboutbox {
-    border-radius: 100px;
+    margin-top: 40px;
+    border-radius: 10px;
     height: 80vh;
     width: 80vw;
     display: flex;
@@ -56,6 +30,10 @@
     justify-content: center;
     align-items: center;
     padding: 0px 50px;
+}
+
+#aboutbox a:hover {
+    background-color: var(--primary);
 }
 
 #bios {
@@ -72,11 +50,6 @@
     border-radius: 10px;
 }
 
-:root {
-    --primary: rgb(13, 37, 63);
-    --secondary: rgb(1, 180, 228);
-    --tertiary: rgb(144, 206, 161)
-}
 /* background for nav */
 .nav-wrapper {
     background-color: var(--primary);
@@ -95,6 +68,4 @@ i {
     font-style:normal;
 }
 
-.slider{
-    background-color: var(--secondary);
-}
+
