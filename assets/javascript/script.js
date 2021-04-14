@@ -4,7 +4,6 @@ var requestUrl = 'https://api.themoviedb.org/3/movie/550?api_key=8426e25c492b7e1
 
 // Runtime Slider
 var slider = document.getElementById('runTime-slider');
-var slider1 = document.getElementById('runTime-slider2');
 noUiSlider.create(slider, {
     start: [45, 300],
     connect: true,
@@ -14,29 +13,16 @@ noUiSlider.create(slider, {
     }
 });
 
-noUiSlider.create(slider1, {
-    start: [45, 300],
-    connect: true,
-    range: {
-        'min': 0,
-        'max': 400
-    }
-});
-
-// var slider = document.getElementById('runTime-slider');
-//   noUiSlider.create(slider, {
-//    start: [1960, 2021],
-//    connect: true,
-//    step: 1,
-//    orientation: 'horizontal', // 'horizontal' or 'vertical'
-//    range: {
-//      'min': 1960,
-//      'max': 2021
-//    },
-//    format: wNumb({
-//      decimals: 0
-//    })
-//   });
+//slider 2 - 
+var slider = document.getElementById('year-slider2');
+  noUiSlider.create(slider, {
+   start: [1960, 2021],
+   connect: true,
+   range: {
+     'min': 1960,
+     'max': 2021
+   },
+  });
        
 
 var tmdb = "https://api.themoviedb.org/3/movie/550?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2"
@@ -92,6 +78,32 @@ fetch(getlink)
     .then (function (data) {
         console.log(data);
     })
+
+var submitBtn = document.getElementById('submit-btn');
+
+function suggestMovie() { 
+    console.log('working');
+    var right = document.getElementById('right-panel')
+    var recBox = document.createElement('div');
+    var movieBox = document.createElement('div');
+    var trailerBox = document.createElement('div');
+    var basedOn = document.createElement('h3');
+    var title = document.createElement('p');
+    var genre = document.createElement('p');
+    var year = document.createElement('p');
+    var runTime = document.createElement('p');
+    var familyFriendly = document.createElement('p');
+    var rating = document.createElement('p');
+    basedOn.textContent = 'Based on your preferences, we suggest:';
+    console.log('movie');
+    right.appendChild(recBox);
+    recBox.appendChild(movieBox);
+    recBox.appendChild(trailerBox);
+    movieBox.appendChild(basedOn);
+
+}  
+
+submitBtn.addEventListener('click', suggestMovie)
 
     
 
