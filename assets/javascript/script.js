@@ -7,7 +7,8 @@ var submitBtn = document.getElementById('submit-btn');
 var requestUrl = 'https://api.themoviedb.org/3/movie/550?api_key=8426e25c492b7e1c228e5403fd1be062'
 var movie = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US" // this could be used if we really wanted to add runtime
 
-// Runtime Slider
+
+// Slider: Runtime
 var slider = document.getElementById('runTime-slider');
 var runTimeSliderValueElement = document.getElementById('runTime-slider-value');
 noUiSlider.create(slider, {
@@ -25,7 +26,7 @@ slider.noUiSlider.on('update', function(values){
     runTimeSliderValueElement.innerHTML = (values.join(' - ') + " minutes");
 })
 
-//Year Slider 2 
+//Slider 2: Rating
 var slider = document.getElementById('year-slider2');
 var yearSlider2ValueElement = document.getElementById('year-slider2-value');
 noUiSlider.create(slider, {
@@ -42,6 +43,24 @@ noUiSlider.create(slider, {
 slider.noUiSlider.on('update', function (values){
     yearSlider2ValueElement.innerHTML = values.join(' - ');
 });
+//Slider 3: Rating
+var slider = document.getElementById('rating-slider3');
+var ratingSlider3ValueElement = document.getElementById('rating-slider3-value');
+noUiSlider.create(slider, {
+    start: [6, 10],
+    connect: true,
+    range: {
+        'min': 0,
+        'max': 10,
+    },
+    format: wNumb({
+        decimals: 0,
+    }),
+});
+slider.noUiSlider.on('update', function (values){
+ratingSlider3ValueElement.innerHTML = (values.join(' - ') + ' Stars');
+});
+
 
 function getGenres(){
     genreList = [];
@@ -78,8 +97,8 @@ function getMovie() {
         console.log(data);
         var pickTitle = (data)['results'][0]['title']
         var releaseYear = (data)['results'][0]['release_date'].substring(0,4);
-        console.log(releaseYear);
-        console.log(pickTitle);
+        var plotSynopsis = (data)['results'][0]['overview'];
+        var avgUserScore = (data)['results'][0]['vote_average'];
     suggestMovie();
     function suggestMovie() { 
     console.log('working');
@@ -89,8 +108,9 @@ function getMovie() {
     var movieBox = document.createElement('div');
     var posterBox = document.createElement('div'); // a poster is probably way easer. ['results'][0]['poster_path'] (set image size)
     var basedOn = document.createElement('h5');
-    var title = document.createElement('p'); ['results'][0]['title'] // ['results'][0]['release_date'].substring(0, 4); < just first 4 digits 
+    var title = document.createElement('p'); ['results'][0]['title'] // ['results'][0]['release_date'].substring(0, 4); < just first 4 digits
     var genre = document.createElement('p');
+    var synopsis = document.createElement('p');
     var runTime = document.createElement('p'); // we are currently using the discover API, we would need to use the movie API to get this info
     var rating = document.createElement('p'); // ['results'][0]['vote_average']
     var poster = document.createElement('div');
@@ -100,6 +120,10 @@ function getMovie() {
     genre.textContent = 'Genre: '; // come back
     runTime.textContent = 'Run time: '; // come back
     rating.textContent = 'Rating';  // come back
+    synopsis.textContent = plotSynopsis; // come back
+    runTime.textContent = 'Run time: '; // come back
+    familyFriendly.textContent = 'Family-friendly: '; // come back
+    rating.textContent = 'Average User Score: ' + avgUserScore ;  // come back
     console.log('movie');
     right.appendChild(recBox);
     recBox.appendChild(basedOn);
@@ -110,6 +134,7 @@ function getMovie() {
     posterBox.appendChild(poster);
     movieBox.appendChild(title);
     movieBox.appendChild(genre);
+    movieBox.appendChild(synopsis);
     movieBox.appendChild(runTime);
     movieBox.appendChild(rating);
 

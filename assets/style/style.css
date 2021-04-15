@@ -106,6 +106,7 @@ i {
 
 .slider{
     width: 100%;
+    height: fit-content;
 }
 
 .slideVal{
