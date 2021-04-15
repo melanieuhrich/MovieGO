@@ -215,9 +215,9 @@ function getMovie() {
             console.log(moviedata);
 
 })  
-}});
+}};
 
-}
+
 
 // submitBtn.addEventListener('click', suggestMovie);
 
