@@ -97,8 +97,8 @@ function getMovie() {
         console.log(data);
         var pickTitle = (data)['results'][0]['title']
         var releaseYear = (data)['results'][0]['release_date'].substring(0,4);
-        console.log(releaseYear);
-        console.log(pickTitle);
+        var plotSynopsis = (data)['results'][0]['overview'];
+        var avgUserScore = (data)['results'][0]['vote_average'];
     suggestMovie();
     function suggestMovie() { 
     console.log('working');
@@ -109,19 +109,17 @@ function getMovie() {
     // var trailerBox = document.createElement('div'); // a poster is probably way easer. ['results'][0]['poster_path'] (set image size)
     var basedOn = document.createElement('h5');
     var title = document.createElement('p'); ['results'][0]['title'] // ['results'][0]['release_date'].substring(0, 4); < just first 4 digits 
-    var genre = document.createElement('p');
-    var year = document.createElement('p');
+    var synopsis = document.createElement('p');
     var runTime = document.createElement('p'); // we are currently using the discover API, we would need to use the movie API to get this info
     var familyFriendly = document.createElement('p'); // ['results'][0]['adult'] true == not family friendly (use if statement? ie if === true "This movie is not family-friendly")
     var rating = document.createElement('p'); // ['results'][0]['vote_average']
     var trailer = document.createElement('div');
     basedOn.textContent = 'Based on your preferences, we suggest:'; 
     title.textContent = pickTitle + " (" + releaseYear + ")";
-    genre.textContent = 'Genre: '; // come back
-    year.textContent = 'Year: '; // come back
+    synopsis.textContent = plotSynopsis; // come back
     runTime.textContent = 'Run time: '; // come back
     familyFriendly.textContent = 'Family-friendly: '; // come back
-    rating.textContent = 'Rating';  // come back
+    rating.textContent = 'Average User Score: ' + avgUserScore ;  // come back
     console.log('movie');
     right.appendChild(recBox);
     recBox.appendChild(basedOn);
@@ -131,8 +129,7 @@ function getMovie() {
     titleBox.appendChild(title);
     // trailerBox.appendChild(trailer);
     movieBox.appendChild(title);
-    movieBox.appendChild(genre);
-    movieBox.appendChild(year);
+    movieBox.appendChild(synopsis);
     movieBox.appendChild(runTime);
     movieBox.appendChild(familyFriendly);
     movieBox.appendChild(rating);
