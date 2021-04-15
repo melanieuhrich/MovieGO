@@ -5,7 +5,7 @@ var keyMF = "cdeeab3b93b63acfe6a1d14f6ac420d2";
 var submitBtn = document.getElementById('submit-btn');
 
 var requestUrl = 'https://api.themoviedb.org/3/movie/550?api_key=8426e25c492b7e1c228e5403fd1be062'
-// var movie = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US` // this could be used if we really wanted to add runtime
+var movie = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US` // this could be used if we really wanted to add runtime
 
 
 // Slider: Runtime
@@ -103,55 +103,73 @@ function getMovie() {
     
     suggestMovie();
 
-        function suggestMovie() {
-            var right = document.getElementById('right-panel')
-            var recBox = document.createElement('div');
-            var titleBox = document.createElement('div'); // 
-            var movieBox = document.createElement('div');
-            // var posterBox = document.createElement('div'); // a poster is probably way easer. ['results'][0]['poster_path'] (set image size)
-            var basedOn = document.createElement('h5');
-            var title = document.createElement('p');['results'][0]['title'] // ['results'][0]['release_date'].substring(0, 4); < just first 4 digits
-            var genre = document.createElement('p');
-            var synopsis = document.createElement('p');
-            var runTime = document.createElement('p'); // we are currently using the discover API, we would need to use the movie API to get this info
-            var rating = document.createElement('p'); // ['results'][0]['vote_average']
-            // var poster = document.createElement('img');
-            basedOn.textContent = 'Based on your preferences, we suggest:';
-            title.textContent = pickTitle + " (" + releaseYear + ")";
-            // poster.setAttribute('src', moviePoster);
-            // if (moviePoster == null) {
-            //     recBox.removeChild(posterBox)
-            // };
-            genre.textContent = 'Genre: '; // come back
-            runTime.textContent = 'Run time: '; // come back
-            // rating.textContent = avgUserScore;
-            synopsis.textContent = plotSynopsis; // come back
-            runTime.textContent = 'Run time: '; // come back
-            // familyFriendly.textContent = 'Family-friendly: '; // come back
-            rating.textContent = 'Average User Score: ' + avgUserScore;  // come back
-            right.appendChild(recBox);
-            recBox.appendChild(basedOn);
-            recBox.appendChild(titleBox);
-            recBox.appendChild(movieBox);
-            titleBox.appendChild(title);
-            movieBox.appendChild(title);
+    function suggestMovie() { 
+    var right = document.getElementById('right-panel')
+    var recBox = document.createElement('div');
+    var titleBox = document.createElement('div'); // 
+    var movieBox = document.createElement('div');
+    // var posterBox = document.createElement('div'); // a poster is probably way easer. ['results'][0]['poster_path'] (set image size)
+    var basedOn = document.createElement('h3');
+    var title = document.createElement('p'); ['results'][0]['title'] // ['results'][0]['release_date'].substring(0, 4); < just first 4 digits
+    var genre = document.createElement('p');
+    var synopsis = document.createElement('p');
+    var runTime = document.createElement('p'); // we are currently using the discover API, we would need to use the movie API to get this info
+    var rating = document.createElement('p'); // ['results'][0]['vote_average']
+    // var poster = document.createElement('img');
+    basedOn.textContent = 'Based on your preferences, we suggest:'; 
+    title.textContent = pickTitle + " (" + releaseYear + ")";
+    // poster.setAttribute('src', moviePoster);
+    // if (moviePoster == null) {
+    //     recBox.removeChild(posterBox)
+    // };
+    genre.textContent = 'Genre: '; // come back
+    runTime.textContent = 'Run time: '; // come back
+    // rating.textContent = avgUserScore;
+    synopsis.textContent = plotSynopsis; // come back
+    runTime.textContent = 'Run time: '; // come back
+    // familyFriendly.textContent = 'Family-friendly: '; // come back
+    rating.textContent = 'Average User Score: ' + avgUserScore ;  // come back
+    // console.log('movie');
+    right.appendChild(recBox);
+    recBox.appendChild(basedOn);
+    recBox.appendChild(titleBox);
+    // recBox.appendChild(posterBox);
+    recBox.appendChild(movieBox);
+    titleBox.appendChild(title);
+    // if ((data)['results'][0]['poster_path'] !== null){
+    //     var posterBox = document.createElement('div');
+    //     var poster = document.createElement('img');
+    //     poster.setAttribute('src', moviePoster);
+    //     recBox.appendChild(posterBox);
+    //     posterBox.appendChild(poster);
+    // }
+    // else { 
+    //     recBox.removeChild(posterBox);
+    //     posterBox.removeChild(poster);
+    //     poster.removeAttribute('src', moviePoster);
+    // }; 
+    // posterBox.appendChild(poster);
+    movieBox.appendChild(title);
+    if ((data)['results'][0]['poster_path'] !== null){
+        var posterBox = document.createElement('div');
+        var poster = document.createElement('img');
+        poster.setAttribute('src', moviePoster);
+        recBox.appendChild(posterBox);
+        posterBox.appendChild(poster);
+        poster.classList.add('poster-size');
+    }
+    movieBox.appendChild(genre);
+    movieBox.appendChild(synopsis);
+    movieBox.appendChild(runTime);
+    movieBox.appendChild(rating);
 
-            if ((data)['results'][0]['poster_path'] !== null) {
-                var posterBox = document.createElement('div');
-                var poster = document.createElement('img');
-                poster.setAttribute('src', moviePoster);
-                recBox.appendChild(posterBox);
-                posterBox.appendChild(poster);
-                poster.classList.add("poster-size");
-            }
-            movieBox.appendChild(genre);
-            movieBox.appendChild(synopsis);
-            movieBox.appendChild(runTime);
-            movieBox.appendChild(rating);
+}  
+});
 
-        }
+     
+
         var movie_id = (data)['results'][0]['id'];
-    })};
+
 
 
 $(".btn").on("click", function () {
