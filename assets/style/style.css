@@ -40,10 +40,12 @@ body {
     align-items: center;
 }
 
-#right-panel {
+#right-panel, #leftpanel {
     margin-top: 25px;
     padding: 25px 10px;
 }
+
+
 
 .genreItem {
     margin-bottom: 20px;
@@ -112,7 +114,7 @@ i {
     font-style:normal;
 }
 .runTime{
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .slider{
@@ -134,4 +136,37 @@ i {
 .poster-size {
     width: 250px;
     
+}
+
+#recbox {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+#buttondiv {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+p {
+    padding: 5px 0px;
+}
+
+#leftpanel, #right-panel {
+    border-radius: 10px;
+}
+
+#maybeflex {
+    display: flex;
+    flex-direction: row;
+    align-items: space-around;
+    justify-content: space-around;
+    width: 100vw;
 }
