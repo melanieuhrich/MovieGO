@@ -5,7 +5,7 @@ var keyMF = "cdeeab3b93b63acfe6a1d14f6ac420d2";
 var submitBtn = document.getElementById('submit-btn');
 
 var requestUrl = 'https://api.themoviedb.org/3/movie/550?api_key=8426e25c492b7e1c228e5403fd1be062'
-var movie = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US" // this could be used if we really wanted to add runtime
+var movie = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US` // this could be used if we really wanted to add runtime
 
 
 // Slider: Runtime
