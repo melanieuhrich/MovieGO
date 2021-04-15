@@ -129,3 +129,8 @@ i {
 #right-panel {
     background-color: var(--primary);
 }
+
+
+.poster-size {
+    width: 250px;
+}
