@@ -1,6 +1,16 @@
 
 * {
+    --primary: rgb(13, 37, 63);
+    --secondary: rgb(1, 180, 228);
+    --tertiary: rgb(144, 206, 161);
     color: white;
+    background-color: hsl(193, 50, 70);
+    
+}
+
+
+body {
+    background-color: hsl(193, 30%, 90%);
 }
 
 .container {
@@ -24,9 +34,15 @@
 }
 
 #purplebox {
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#right-panel {
+    margin-top: 25px;
+    padding: 25px 10px;
 }
 
 .genreItem {
@@ -78,11 +94,6 @@
     border-radius: 10px;
 }
 
-:root {
-    --primary: rgb(13, 37, 63);
-    --secondary: rgb(1, 180, 228);
-    --tertiary: rgb(144, 206, 161)
-}
 /* background for nav */
 .nav-wrapper {
     background-color: var(--primary);
@@ -107,6 +118,8 @@ i {
 .slider{
     width: 100%;
     height: fit-content;
+    padding: 0px 25px;
+    
 }
 
 .slideVal{
