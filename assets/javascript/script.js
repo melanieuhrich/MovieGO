@@ -7,7 +7,8 @@ var submitBtn = document.getElementById('submit-btn');
 var requestUrl = 'https://api.themoviedb.org/3/movie/550?api_key=8426e25c492b7e1c228e5403fd1be062'
 var movie = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US" // this could be used if we really wanted to add runtime
 
-// Runtime Slider
+
+// Slider: Runtime
 var slider = document.getElementById('runTime-slider');
 var runTimeSliderValueElement = document.getElementById('runTime-slider-value');
 noUiSlider.create(slider, {
@@ -25,7 +26,7 @@ slider.noUiSlider.on('update', function(values){
     runTimeSliderValueElement.innerHTML = (values.join(' - ') + " minutes");
 })
 
-//Year Slider 2 
+//Slider 2: Rating
 var slider = document.getElementById('year-slider2');
 var yearSlider2ValueElement = document.getElementById('year-slider2-value');
 noUiSlider.create(slider, {
@@ -42,6 +43,24 @@ noUiSlider.create(slider, {
 slider.noUiSlider.on('update', function (values){
     yearSlider2ValueElement.innerHTML = values.join(' - ');
 });
+//Slider 3: Rating
+var slider = document.getElementById('rating-slider3');
+var ratingSlider3ValueElement = document.getElementById('rating-slider3-value');
+noUiSlider.create(slider, {
+    start: [6, 10],
+    connect: true,
+    range: {
+        'min': 0,
+        'max': 10,
+    },
+    format: wNumb({
+        decimals: 0,
+    }),
+});
+slider.noUiSlider.on('update', function (values){
+ratingSlider3ValueElement.innerHTML = (values.join(' - ') + ' Stars');
+});
+
 
 function getGenres(){
     genreList = [];
