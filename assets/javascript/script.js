@@ -97,14 +97,24 @@ function getMovie() {
     })
     .then (function (data) {
         console.log(data);
-        var movie_id = (data)['results'][0]['id'];
-        var movie = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US` // this could be used if we really wanted to add runtime
         var pickTitle = (data)['results'][0]['title']
         var releaseYear = (data)['results'][0]['release_date'].substring(0,4);
         var plotSynopsis = (data)['results'][0]['overview'];
         var avgUserScore = (data)['results'][0]['vote_average'];
-        var moviePoster = 'https://image.tmdb.org/t/p/w500' + (data)['results'][0]['poster_path'];   
-    
+        var moviePoster = 'https://image.tmdb.org/t/p/w500' + (data)['results'][0]['poster_path'];  
+        var movie_id = (data)['results'][0]['id'];
+        var movie = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US` // this could be used if we really wanted to add runtime
+        fetch (movie)
+        .then (function(runminutes) {
+            return runminutes.json();
+        })
+        .then (function(moviedata) {
+            console.log(moviedata);
+            var minutes = (moviedata)['runtime'];
+            console.log(minutes);
+        
+        
+
     suggestMovie();
 
     function suggestMovie() { 
@@ -120,7 +130,7 @@ function getMovie() {
     var rating = document.createElement('p'); // 
     basedOn.textContent = 'Based on your preferences, we suggest:'; 
     title.textContent = pickTitle + " (" + releaseYear + ")";
-    // runTime.textContent = 'Run time: '; 
+    runTime.textContent = minutes + " minutes"; 
     synopsis.textContent = plotSynopsis;
     rating.textContent = 'Average User Score: ' + avgUserScore ; 
     right.appendChild(recBox);
@@ -143,7 +153,7 @@ function getMovie() {
     movieBox.appendChild(rating);
 
 
-} 
+} });
 });
 };
      
