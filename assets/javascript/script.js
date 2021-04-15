@@ -108,7 +108,7 @@ function getMovie() {
     var titleBox = document.createElement('div'); // 
     var movieBox = document.createElement('div');
     // var posterBox = document.createElement('div'); // a poster is probably way easer. ['results'][0]['poster_path'] (set image size)
-    var basedOn = document.createElement('h5');
+    var basedOn = document.createElement('h3');
     var title = document.createElement('p'); ['results'][0]['title'] // ['results'][0]['release_date'].substring(0, 4); < just first 4 digits
     var genre = document.createElement('p');
     var synopsis = document.createElement('p');
@@ -155,7 +155,7 @@ function getMovie() {
         poster.setAttribute('src', moviePoster);
         recBox.appendChild(posterBox);
         posterBox.appendChild(poster);
-        poster.classList.add("poster-size");
+        poster.classList.add('poster-size');
     }
     movieBox.appendChild(genre);
     movieBox.appendChild(synopsis);
