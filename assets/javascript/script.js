@@ -120,10 +120,11 @@ function getMovie() {
     function suggestMovie() { 
     var right = document.getElementById('right-panel')
     var recBox = document.createElement('div');
+    recBox.setAttribute("id", "recbox");
     var titleBox = document.createElement('div'); 
     var movieBox = document.createElement('div');
     var basedOn = document.createElement('h3');
-    var title = document.createElement('p'); ['results'][0]['title'] 
+    var title = document.createElement('h3'); ['results'][0]['title'] 
     var genre = document.createElement('p');
     var synopsis = document.createElement('p');
     var runTime = document.createElement('p'); 
