@@ -102,6 +102,7 @@ function getMovie() {
         var moviePoster = 'https://image.tmdb.org/t/p/w500' + (data)['results'][0]['poster_path'];   
     
     suggestMovie();
+
     function suggestMovie() { 
     var right = document.getElementById('right-panel')
     var recBox = document.createElement('div');
@@ -165,70 +166,11 @@ function getMovie() {
 }  
 });
 
+     
+
         var movie_id = (data)['results'][0]['id'];
-        suggestMovie();
-        function suggestMovie() { 
-        console.log('working');
-        var right = document.getElementById('right-panel')
-        var recBox = document.createElement('div');
-        var titleBox = document.createElement('div'); // 
-        var movieBox = document.createElement('div');
-        var posterBox = document.createElement('div'); // a poster is probably way easer. ['results'][0]['poster_path'] (set image size)
-        var basedOn = document.createElement('h5');
-        var title = document.createElement('p'); ['results'][0]['title'] // ['results'][0]['release_date'].substring(0, 4); < just first 4 digits
-        var genre = document.createElement('p');
-        var synopsis = document.createElement('p');
-        var runTime = document.createElement('p'); // we are currently using the discover API, we would need to use the movie API to get this info
-        var rating = document.createElement('p'); // ['results'][0]['vote_average']
-        var poster = document.createElement('div');
-        basedOn.textContent = 'Based on your preferences, we suggest:'; 
-        title.textContent = pickTitle + " (" + releaseYear + ")";
-        poster.textContent = 'Poster here'
-        genre.textContent = 'Genre: '; // come back
-        runTime.textContent = 'Run time: '; // come back
-        rating.textContent = 'Rating';  // come back
-        synopsis.textContent = plotSynopsis; // come back
-        runTime.textContent = 'Run time: '; // come back
-        familyFriendly.textContent = 'Family-friendly: '; // come back
-        rating.textContent = 'Average User Score: ' + avgUserScore ;  // come back
-        console.log('movie');
-        right.appendChild(recBox);
-        recBox.appendChild(basedOn);
-        recBox.appendChild(titleBox);
-        recBox.appendChild(posterBox);
-        recBox.appendChild(movieBox);
-        titleBox.appendChild(title);
-        posterBox.appendChild(poster);
-        movieBox.appendChild(title);
-        movieBox.appendChild(genre);
-        movieBox.appendChild(synopsis);
-        movieBox.appendChild(runTime);
-        movieBox.appendChild(rating);
-        var movie = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US` // this could be used if we really wanted to add runtime
 
 
-        fetch (movie)
-        .then (function (movieInfo){
-            return movieInfo.json();
-        })
-        .then (function (moviedata) {
-            console.log(moviedata);
-
-})  
-}};
-
-
-
-// submitBtn.addEventListener('click', suggestMovie);
-
-    
-
-// checkbox boolean + genre id    
-// ($(".checkboxinput").eq(0).attr("id"));
-// ($(".checkboxinput").eq(0).is(":checked"));
-
-
-//test button
 
 $(".btn").on("click", function () {
     $("#right-panel").empty();
@@ -238,15 +180,3 @@ $(".btn").on("click", function () {
     // suggestMovie();
 }
 );
-
-// function getGenres(){
-//     genreList = [];
-//     for (i = 0; i < $("#checkBoxForm").children().length - 1; i++)
-//     if ($(".checkboxinput").eq(i).is(":checked")) {
-//         genreList.push($(".checkboxinput").eq(i).attr("id"));
-//     // console.log(genreList);
-//     // console.log(genreList.toString());
-//     }
-//     return genreList.toString();
-// }
-
