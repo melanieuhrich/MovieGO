@@ -5,7 +5,7 @@ var keyMF = "cdeeab3b93b63acfe6a1d14f6ac420d2";
 var submitBtn = document.getElementById('submit-btn');
 
 var requestUrl = 'https://api.themoviedb.org/3/movie/550?api_key=8426e25c492b7e1c228e5403fd1be062'
-// var movie = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US` // this could be used if we really wanted to add runtime
+var movie = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US` // this could be used if we really wanted to add runtime
 
 
 // Slider: Runtime
@@ -108,7 +108,7 @@ function getMovie() {
     var titleBox = document.createElement('div'); // 
     var movieBox = document.createElement('div');
     // var posterBox = document.createElement('div'); // a poster is probably way easer. ['results'][0]['poster_path'] (set image size)
-    var basedOn = document.createElement('h5');
+    var basedOn = document.createElement('h3');
     var title = document.createElement('p'); ['results'][0]['title'] // ['results'][0]['release_date'].substring(0, 4); < just first 4 digits
     var genre = document.createElement('p');
     var synopsis = document.createElement('p');
@@ -155,7 +155,7 @@ function getMovie() {
         poster.setAttribute('src', moviePoster);
         recBox.appendChild(posterBox);
         posterBox.appendChild(poster);
-        poster.classList.add("poster-size");
+        poster.classList.add('poster-size');
     }
     movieBox.appendChild(genre);
     movieBox.appendChild(synopsis);
