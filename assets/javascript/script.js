@@ -1,19 +1,22 @@
 
+// api keys -- var key is JJ
 var key = '8426e25c492b7e1c228e5403fd1be062';
-var requestUrl = 'https://api.themoviedb.org/3/movie/550?api_key=8426e25c492b7e1c228e5403fd1be062'
-var movie = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US"
 var keyMF = "cdeeab3b93b63acfe6a1d14f6ac420d2";
+var submitBtn = document.getElementById('submit-btn');
+
+var requestUrl = 'https://api.themoviedb.org/3/movie/550?api_key=8426e25c492b7e1c228e5403fd1be062'
+var movie = "https://api.themoviedb.org/3/movie/{movie_id}?api_key=cdeeab3b93b63acfe6a1d14f6ac420d2&language=en-US" // this could be used if we really wanted to add runtime
 
 
 // Slider: Runtime
 var slider = document.getElementById('runTime-slider');
 var runTimeSliderValueElement = document.getElementById('runTime-slider-value');
 noUiSlider.create(slider, {
-    start: [45, 300],
+    start: [60, 120],
     connect: true,
     range: {
         'min': 0,
-        'max': 400,
+        'max': 300,
     },
     format: wNumb({
         decimals: 0,
@@ -27,10 +30,10 @@ slider.noUiSlider.on('update', function(values){
 var slider = document.getElementById('year-slider2');
 var yearSlider2ValueElement = document.getElementById('year-slider2-value');
 noUiSlider.create(slider, {
-    start: [1980, 2001],
+    start: [2000, 2021],
     connect: true,
     range: {
-        'min': 1960,
+        'min': 1950,
         'max': 2021,
     },
     format: wNumb({
@@ -68,16 +71,15 @@ function getGenres(){
     return genreList.toString();
 };
 
-var genres = getGenres();
+// var genres = getGenres();
 var runtimeLte = 200;
 var releaseLte = 2020;
 var releaseGte = 1900;
 var voteGte = 5;
-// var adult = true;
+
 
 // var  getlink = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&sort_by=popularity.desc&include_adult=${adult}&with_genres=${genres}&with_runtime.lte=${runtimeLte}release_date.gte=${releaseGte}&primary_release_date.lte=${releaseLte}&vote_average.gte=${voteGte}&page=10`;
 // var  getlink = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&sort_by=popularity.desc&include_adult=${adult}&with_genres=${genres}&vote_average.gte=${voteGte}&page=10`;
-
 
 
 function getMovie() {
@@ -93,53 +95,41 @@ function getMovie() {
     })
     .then (function (data) {
         console.log(data);
-    });
-
-}
-
-// function getGenres(){
-//     genreList = [];
-//     for (i = 0; i < $("#checkBoxForm").children().length - 1; i++)
-//     if ($(".checkboxinput").eq(i).is(":checked")) {
-//         genreList.push($(".checkboxinput").eq(i).attr("id"));
-//     }
-//     return genreList.toString();
-// }
-
-
-var submitBtn = document.getElementById('submit-btn');
-
-function suggestMovie() { 
+        var pickTitle = (data)['results'][0]['title']
+        var releaseYear = (data)['results'][0]['release_date'].substring(0,4);
+        console.log(releaseYear);
+        console.log(pickTitle);
+    suggestMovie();
+    function suggestMovie() { 
     console.log('working');
     var right = document.getElementById('right-panel')
     var recBox = document.createElement('div');
-    var titleBox = document.createElement('div');
+    var titleBox = document.createElement('div'); // 
     var movieBox = document.createElement('div');
-    var trailerBox = document.createElement('div');
+    // var trailerBox = document.createElement('div'); // a poster is probably way easer. ['results'][0]['poster_path'] (set image size)
     var basedOn = document.createElement('h5');
-    var title = document.createElement('p');
+    var title = document.createElement('p'); ['results'][0]['title'] // ['results'][0]['release_date'].substring(0, 4); < just first 4 digits 
     var genre = document.createElement('p');
     var year = document.createElement('p');
-    var runTime = document.createElement('p');
-    var familyFriendly = document.createElement('p');
-    var rating = document.createElement('p');
+    var runTime = document.createElement('p'); // we are currently using the discover API, we would need to use the movie API to get this info
+    var familyFriendly = document.createElement('p'); // ['results'][0]['adult'] true == not family friendly (use if statement? ie if === true "This movie is not family-friendly")
+    var rating = document.createElement('p'); // ['results'][0]['vote_average']
     var trailer = document.createElement('div');
     basedOn.textContent = 'Based on your preferences, we suggest:'; 
-    title.textContent = 'Title: '; // come back
+    title.textContent = pickTitle + " (" + releaseYear + ")";
     genre.textContent = 'Genre: '; // come back
     year.textContent = 'Year: '; // come back
     runTime.textContent = 'Run time: '; // come back
     familyFriendly.textContent = 'Family-friendly: '; // come back
     rating.textContent = 'Rating';  // come back
-    trailer.textContent = 'Trailer: '; // come back
     console.log('movie');
     right.appendChild(recBox);
     recBox.appendChild(basedOn);
     recBox.appendChild(titleBox);
-    recBox.appendChild(trailerBox);
+    // recBox.appendChild(trailerBox);
     recBox.appendChild(movieBox);
     titleBox.appendChild(title);
-    trailerBox.appendChild(trailer);
+    // trailerBox.appendChild(trailer);
     movieBox.appendChild(title);
     movieBox.appendChild(genre);
     movieBox.appendChild(year);
@@ -147,9 +137,10 @@ function suggestMovie() {
     movieBox.appendChild(familyFriendly);
     movieBox.appendChild(rating);
 
-
-
 }  
+});
+
+}
 
 // submitBtn.addEventListener('click', suggestMovie);
 
@@ -167,7 +158,7 @@ $(".btn").on("click", function () {
     var list = getGenres();
     console.log(list);
     getMovie();
-    suggestMovie();
+    // suggestMovie();
 }
 );
 
