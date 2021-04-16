@@ -127,6 +127,7 @@ function getMovie() {
     var title = document.createElement('h3'); ['results'][0]['title'] 
     var genre = document.createElement('p');
     var synopsis = document.createElement('p');
+    synopsis.classList.add("synopsisP");
     var runTime = document.createElement('p'); 
     var rating = document.createElement('p'); // 
     basedOn.textContent = 'Based on your preferences, we suggest:'; 
