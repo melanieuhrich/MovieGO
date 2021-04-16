@@ -87,7 +87,7 @@ body {
     flex-direction: row;
     align-content: space-around;
     justify-content: center;
-    width: 75%;
+    width: 100%;
     margin: 0px 10px;
     padding: 0px 10px;
 }
@@ -156,7 +156,7 @@ h3 {
 }
 
 p {
-    padding: 5px 0px;
+    padding: 10px 0px;
 }
 
 #leftpanel, #right-panel {
@@ -169,4 +169,12 @@ p {
     align-items: space-around;
     justify-content: space-around;
     width: 100vw;
+}
+
+.synopsisP {
+    padding: 0px 60px;
+}
+
+#buttondiv {
+    filter: drop-shadow(1px 2px 2px var(--tertiary));
 }
