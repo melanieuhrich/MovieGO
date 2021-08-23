@@ -1,14 +1,18 @@
-# Project-1
+# MovieGO
+
+## Authors 
+### Michael Francisco
+Project manager | [GitHub](https://github.com/mfrancisco9_) | [email](mailto:m.francisco9@gmail.com)
+
+### Jocelyn Jayjack 
+Frontend designer & developer | [GitHub](https://github.com/jjayjack) | [email](mailto:jocelynjayjack@gmail.com) 
 
 
-\\Updated page with nav and starting genre selector //
-    ![image](https://user-images.githubusercontent.com/79474830/114589587-6b354480-9c4d-11eb-8bce-69c65bbe836d.png)
+### Melanie Uhrich 
+Frontend designer & developer | [GitHub](https://github.com/melanieuhrich) | [email](mailto:melanieuhrich13@gmail.com) 
 
-\\ Updated Nav Bar to be linked to sections of page //
-![image](https://user-images.githubusercontent.com/79474830/114448343-0ae4cb00-9b99-11eb-8c54-c931924e5bf5.png)
+## Description
+This application allows the user to select their movie preferences from a list of criteria and then generates a personalized recommendation. 
 
-
-hello - michael
-
-mel github test
-testingg
+## Usage
+Our site is fully deployed on GitHub Pages at https://melanieuhrich.github.io/MovieGO/. Feel free to explore! 
