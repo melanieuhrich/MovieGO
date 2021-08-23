@@ -1,3 +1,4 @@
+
 # MovieGO
 
 ## Authors 
@@ -6,7 +7,6 @@ Project manager | [GitHub](https://github.com/mfrancisco9_) | [email](mailto:m.f
 
 ### Jocelyn Jayjack 
 Frontend designer & developer | [GitHub](https://github.com/jjayjack) | [email](mailto:jocelynjayjack@gmail.com) 
-
 
 ### Melanie Uhrich 
 Frontend designer & developer | [GitHub](https://github.com/melanieuhrich) | [email](mailto:melanieuhrich13@gmail.com) 
