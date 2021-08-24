@@ -16,62 +16,73 @@
 
 <body>
 
-    <!-- start of nav bar -->
-    <nav>
-        <div class="nav-wrapper">
-            <a href="index.html" class="brand-logo"><i class="material-icons tmdb"></i>Movie GO</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="about.html"><i class="material-icons">About</i></a></li>
-            </ul>
-        </div>
-    </nav>
-    <!-- end of nav -->
-    <div id="mainArea" class="blue-grey lighten-5">
-        <div class="container blue-grey z-depth-2" id="aboutbox">
-            <div class="row">
-                <h1 class="light-green-text text-lighten-5">
-                    About this project:
-                </h1>
-                <p class="light-green-text text-lighten-5">
-                    This website was created in April of 2021 by Micahel Francisco, Jocelyn Jayjack, and Melanie Uhrich
-                    as part of the Northwestern Coding Bootcamp. The project utilizies <a
-                        href="https://developers.themoviedb.org/" class="light-blue-text lighten-4" target="_blank">The
-                        Movie Database API</a>. Using a grid of checkboxes created in Materialize as well as three
-                    sliders created in noUiSlider and wnumb, the website collects user preferences and returns the most
-                    popular selection from TMDB that matches the criteria. Future plans include using local storage to
-                    keep past reccommendations and incorporating the TrailerAddict API to provide trailers for
-                    reccommended movies.
-                </p>
-            </div>
-            <div class="divider"></div>
-            <div class="container center-align">
-                <div id="bios" class="row center-align blue-grey darken-1 z-depth-2">
-                    <div id="michael" class="bios col s4 m4 l4">
-                        <h5><a href="https://github.com/mfrancisco9" target="_blank">Michael Francisco</h5>
-                                <p>went to Indiana University for Arabic and International Studies, worked in language
-                                    education and then coffee roasting, and is now a student in Northwestern's coding
-                                    bootcamp. His favorite movie is <em>Raising Arizona</em>.</p>
-                    </div>
-                    <div id="jocelyn" class="bios col s4 m4 l4">
-                        <h5><a href="https://github.com/jjayjack" target="_blank">Jocelyn Jayjack</a></h5>
-                        <p>studied Health, Kinesiology, and Nutrition at Purdue University. After graduating she worked
-                            in retail and retail management but decided now is the time for a change so enrolled in
-                            Northwestern's coding bootcamp. Her favorite movie is <em>Big Fish.</em></p>
-
-                    </div>
-                    <div id="melanie" class="bios col s4 m4 l4">
-                        <h5><a href="https://github.com/melanieuhrich" target="_blank">Melanie Uhrich</a></h5>
-                        <p>studied International Relations and Spanish at the University of Illinois. After graduating
-                            in 2020 she had been looking for her next step which led her to Northwestern's Coding
-                            Bootcamp. She doesn't have a favorite movie, but is looking forward to using her new app to
-                            find one!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- start of nav bar -->
+<nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo"><i class="material-icons tmdb"></i>MovieGO</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="about.html"><i class="material-icons">About Us</i></a></li>
+      </ul>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="assets/javascript/script.js"></script>
+  </nav>
+  <!-- end of nav -->
+<div>
+
+    <div class="row">
+        <div class="col s12 m4">
+          <div class="card blue-grey darken-1 michael" id='bio-card'>
+            <div class="card-content white-text bio">
+              <span class="card-title"><a href="https://github.com/mfrancisco9" target="_blank">Michael Francisco</a></span>
+              <p>went to Indiana University for Arabic and International Studies, worked in language education and then coffee roasting, and is now a student in Northwestern's coding bootcamp. His favorite movie is <em>Raising Arizona</em>.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+            <div class="card blue-grey darken-1" id='bio-card'>
+              <div class="card-content white-text bio">
+                <span class="card-title"><a href="https://github.com/jjayjack" target="_blank">Jocelyn Jayjack</a></span>
+                <p>studied Health, Kinesiology, and Nutrition at Purdue University. After graduating she worked in retail and retail management but decided now is the time for a change so enrolled in Northwestern's coding bootcamp. Her favorite movie is <em>Big Fish.</em></p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="card blue-grey darken-1" id='bio-card'>
+              <div class="card-content white-text bio">
+                <span class="card-title"><a href="https://github.com/melanieuhrich" target="_blank">Melanie Uhrich</a></span>
+                <p>studied International Relations and Spanish at the University of Illinois. After graduating in 2020 she had been looking for her next step which led her to Northwestern's Coding Bootcamp. She doesn't have a favorite movie, but is looking forward to using her new app to find one!</p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1 summary" id='bio-card'>
+            <div class="card-content white-text">
+              <p>This website was created in April of 2021 by Micahel Francisco, Jocelyn Jayjack, and Melanie Uhrich as part of the Northwestern Coding Bootcamp. The project utilizies <a href="https://developers.themoviedb.org/" class="light-blue-text lighten-4" target="_blank">The Movie Database API</a>. Using a grid of checkboxes created in Materialize as well as three sliders created in noUiSlider and wnumb, the website collects user preferences and returns the most popular selection from TMDB that matches the criteria. Future plans include using local storage to keep past reccommendations and incorporating the TrailerAddict API to provide trailers for recommended movies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+           
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="assets/javascript/script.js"></script>
 </body>
 
 </html>
